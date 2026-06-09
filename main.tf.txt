@@ -1,0 +1,16 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+resource "aws_s3_bucket" "example" {
+  bucket = "may12-my-test-bucket-CMD"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
